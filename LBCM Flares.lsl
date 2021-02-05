@@ -16,8 +16,9 @@ default
     {
         while(i--)
         {
-            string desc = llList2String(llGetObjectDetails(llDetectedKey(i),[OBJECT_DESC]),0);
-            if(llGetSubString(desc,0,3)=="LBA.")
+            string data=(string)llGetObjectDetails(hit,[OBJECT_DESC]);//Get DESC
+            list parse=llCSV2List(llToUpper(data));//Parse DESC, ToUpper is used to case sensitivity
+            if(llList2String(parse,-1)=="SKR")//Look for missile flag
             {
                 list d = llCSV2List(desc);
                 // get their max hp and filter out armor, set missile hp at 1hp
