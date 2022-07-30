@@ -10,6 +10,7 @@ default
 	{
   		if(n)
   		{
+			llSetObjectDesc("LBA.v.,SKR");
     			lbcmhex = (integer)("0x" + llGetSubString(llMD5String((string) llGetKey(), 0), 0, 3));
     			lbcmlisten = llListen(hex, "", "", "");
   		}
